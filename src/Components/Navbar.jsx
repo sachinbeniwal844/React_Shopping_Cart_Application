@@ -13,7 +13,7 @@ const Navbar = () => {
           <Link to={"/"}>
             <div className='flex justify-center items-center gap-6'>
                 <House className='w-8 h-8 text-orange-400'/>
-                <h1 className='text-4xl tracking-widest font-bold'>WDM <span className='text-orange-400'>STORE</span></h1>
+                <h1 className='text-2xl md:text-4xl tracking-widest font-bold'>WDM <span className='text-orange-400'>STORE</span></h1>
             </div>
           </Link>
            <Link to={"/cart"} c className="relative p-3 bg-orange-500/10 rounded-xl hover:bg-orange-500/20 transition duration-200 border border-orange-400/50 shadow-lg cursor-pointer">
