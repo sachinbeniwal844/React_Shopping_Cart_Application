@@ -1,0 +1,42 @@
+import { ShoppingCart } from "lucide-react";
+import React from "react";
+import { Link } from "react-router-dom";
+import { useCart } from "../Context/CartContext";
+
+const ProductCard = ({ product }) => {
+  const {addToCart} = useCart();
+  return (
+    <div className="bg-gray-900 rounded-2xl shadow-xl overflow-hidden flex flex-col h-full transition duration-500 transform border border-gray-800 hover:scale-[1.03] group hover:shadow-orange-900/40">
+      <Link
+        to={`/product/${product.id}`}
+        className="relative overflow-hidden cursor-pointer"
+      >
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-56 object-cover object-center transitionn duration-500 group-hover:scale-110 group-hover:opacity-90"
+        />
+        <div className="absolute bottom-0 left-0 bg-orange-500 text-white px-5 py-2 text-xl font-extrabold rounded-tr-xl shadow-lg">
+          ₹{product.price.toFixed(2)}
+        </div>
+      </Link>
+
+      <div className="flex flex-col justify-center p-5 grow ">
+        <h3 className="font-bold text-xl mb-2 line-clamp-1">{product.name}</h3>
+        <p className=" text-sm mb-4 line-clamp-2">{product.description}</p>
+        <div className="flex items-center text-xs text-gray-500 mb-4">
+          {" "}
+          <span className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full font-semibold">
+            {product.category}
+          </span>
+        </div>
+        <button  onClick={()=>addToCart(product)} className="mx-auto w-full py-3 bg-orange-600 text-white font-bold rounded-full shadow-lg shadow-orange-800/50 cursor-pointer hoveer:bg-orange-700 transition duration-300 flex items-center justify-center space-x-2 transform hover:ring-4 hover:ring-pink-600/50 uppercase tracking-wide">
+            <ShoppingCart className="w-5 h-5" />
+            <span>Add to Cart</span>
+          </button>
+      </div>
+    </div>
+  );
+};
+
+export default ProductCard;

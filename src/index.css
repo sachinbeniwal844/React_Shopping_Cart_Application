@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Playfair+Display:wght@500&display=swap');
+
+@import "tailwindcss";
+
+body{
+  background-color: black;
+  color: white;
+  font-family: "Playfair Display", serif;
+}
