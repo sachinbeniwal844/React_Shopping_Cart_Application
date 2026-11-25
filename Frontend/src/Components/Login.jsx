@@ -29,8 +29,8 @@ const Login = () => {
           toast.success("Loggedin Successfully");
           document.getElementById("my_modal_3").close();
           setTimeout(() => {
-            window.location.reload();
             localStorage.setItem("Users", JSON.stringify(res.data.user));
+            window.location.reload();
           }, 1000);
         }
           //  localStorage.setItem("Users",res.data);  // ya object ki form ma h hume name is chaiye to niche likha h
