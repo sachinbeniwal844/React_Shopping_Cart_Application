@@ -18,7 +18,7 @@ const ProductDetail = () => {
 
   // console.log(id);
   return (
-    <div className="mt-35 max-w-6xl mx-auto px-4 md:px-8 bg-gray-900 min-h-screen rounded-2xl shadow-2xl p-6 md:p-12 border border-gray-800">
+    <div className="mt-8 max-w-6xl mx-auto px-4 md:px-8 bg-gray-900 min-h-screen rounded-2xl shadow-2xl p-6 md:p-12 border border-gray-800">
 
       <Link to={"/"}>
         <button className="flex justify-center items-center text-gray-400 gap-2 text-lg font-semibold">

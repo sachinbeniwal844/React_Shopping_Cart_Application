@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const OrderConfimation = ({ deliverydetails }) => {
   return (
-    <div className="container mx-auto mt-30 px-4 md:px-8">
-      <div className="p-12 bg-gray-900 rounded-3xl shadow-2xl max-w-2xl mx-auto text-center mt-12 border border-green-700 text-white">
+    <div className="container mx-auto px-4 md:px-8">
+      <div className="p-12 bg-gray-900 rounded-3xl shadow-2xl max-w-2xl mx-auto text-center mt-10 border border-green-700 text-white">
         <CheckCircle className="w-20 h-20 text-green-500 text-center mx-auto" />
         <h1 className="p-4 text-3xl font-extrabold">Order Confirmed!</h1>
         <p className="text-gray-300">

@@ -24,7 +24,7 @@ const ProductList = () => {
 
   return (
     <>
-      <div className="container mx-auto px-4 py-4 md:px-8 pt-8">
+      <div className="container mx-auto px-4 py-4 md:px-8 pt-5">
         <SearchFilter searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
         <CategoryFilter  selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}/>

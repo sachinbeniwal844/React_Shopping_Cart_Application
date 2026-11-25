@@ -7,7 +7,7 @@ import CartItem from "../Components/CartItem";
 const Cart = () => {
   const { cart, cartCount, cartTotal } = useCart();
   return (
-    <div className="mt-30 container mx-auto px-4 md:px-8 pt-4">
+    <div className="mt-5 container mx-auto px-4 md:px-8 pt-4">
       <div className="flex items-center text-xl text-gray-400">
         <Link
           to={"/"}

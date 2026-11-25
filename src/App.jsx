@@ -1,14 +1,19 @@
 import React from "react";
 import Navbar from "./Components/Navbar";
+import Signup from "./Components/Signup";
 import ProductList from "./Pages/ProductList";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import ProductDetail from "./Pages/ProductDetail";
 import Cart from "./Pages/Cart";
 import Checkout from "./Pages/Checkout";
 import Footer from "./Components/Footer";
-import { ToastContainer, toast ,Bounce} from "react-toastify";
+import { ToastContainer, Bounce } from "react-toastify";
+import { Toaster } from "react-hot-toast";
+import { useCart } from "./Context/CartContext";
 
 const App = () => {
+  const { authUser } = useCart();
+  const location = useLocation();
   return (
     <>
       <ToastContainer
@@ -25,14 +30,27 @@ const App = () => {
         transition={Bounce}
       />
       <div className="min-h-screen bg-gray-950">
-        <Navbar />
+        {location.pathname !== "/signup" && (
+          <>
+            <Navbar />
+          </>
+        )}
         <Routes>
           <Route path="/" element={<ProductList />} />
           <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route
+            path="/cart"
+            element={authUser ? <Cart /> : <Navigate to="/signup"/>}
+          />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
-        <Footer />
+        {location.pathname !== "/signup" && (
+          <>
+           <Footer />
+          </>
+        )}
+        <Toaster />
       </div>
     </>
   );

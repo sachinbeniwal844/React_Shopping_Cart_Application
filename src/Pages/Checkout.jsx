@@ -32,7 +32,7 @@ const Checkout = () => {
     return <OrderConfimation deliverydetails={deliverydetails} />;
 
   return (
-    <div className="container mx-auto mt-30 px-4 md:px-8">
+    <div className="container mx-auto mt-8 px-4 md:px-8">
       <h1 className="text-4xl text-white font-extrabold px-4">
         Finalize Order
       </h1>

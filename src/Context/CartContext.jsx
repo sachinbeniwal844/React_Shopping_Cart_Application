@@ -5,6 +5,12 @@ import { ToastContainer, toast, Bounce } from "react-toastify";
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
+ const initialAuthUser = localStorage.getItem("Users");
+ 
+   const [authUser, setAuthUser] = useState(
+     initialAuthUser ? JSON.parse(initialAuthUser) : undefined
+   );
+
   const [cart, setCart] = useState([]);
 
   const products = initialProducts;
@@ -90,6 +96,8 @@ export const CartProvider = ({ children }) => {
         clearCart,
         cartCount,
         cartTotal,
+        authUser,
+        setAuthUser,
       }}
     >
       {children}

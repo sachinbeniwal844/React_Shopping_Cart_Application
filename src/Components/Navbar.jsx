@@ -1,14 +1,18 @@
 import React from 'react'
-import { House } from 'lucide-react';
+import { House, LogOut } from 'lucide-react';
 import { ShoppingCart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../Context/CartContext';
+import Login from "./Login"
+import Logout from "./Logout"
+
 const Navbar = () => {
 
-  const { cartCount } = useCart();
+  const { cartCount, authUser } = useCart();
+  // console.log(authUser)
   return (
     <>
-    <header className='fixed left-0 top-0 right-0 z-50 px-4 py-4 md:px-8 pt-8 bg-gray-950/95 backdrop-blur-md text-white shadow-2xl shadow-gray-950/70 border-b border-orange-900 h-25'>
+    <header className='sticky top-0 z-50 px-4 py-4 md:px-8 pt-8 bg-gray-950/95 backdrop-blur-md text-white shadow-2xl shadow-gray-950/70 border-b border-orange-900 h-25'>
         <div className='container mx-auto flex justify-between items-center'>
           <Link to={"/"}>
             <div className='flex justify-center items-center gap-6'>
@@ -25,9 +29,15 @@ const Navbar = () => {
             </div>
            </Link>  
 
-           <div className="relative p-3 bg-orange-500/10  text-orange-400 rounded-xl hover:bg-orange-500/20 transition duration-200 border border-orange-400/50 shadow-lg cursor-pointer">
-            <button>Login</button>
+           {
+            authUser ?
+            <Logout/> :
+            <div className="p-3 bg-orange-500/10  text-orange-400 rounded-xl hover:bg-orange-500/20 transition duration-200 border border-orange-400/50 shadow-lg cursor-pointer">
+            <button onClick={()=>document.getElementById('my_modal_3').showModal()}>Login</button>
+            <Login/>
            </div>
+           }
+           
           </div>
            
         </div>
