@@ -21,7 +21,7 @@ const Login = () => {
         password: data.password,
       };
       await axios
-        .post("http://localhost:1000/api/user/login", userInfo)
+        .post("https://react-shopping-cart-application.onrender.com/api/user/login", userInfo)
         .then((res) => {
           console.log(res.data);
 

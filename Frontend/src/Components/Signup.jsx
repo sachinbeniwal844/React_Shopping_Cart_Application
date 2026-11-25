@@ -28,7 +28,7 @@ const Signup = () => {
       password: data.password,
     };
     await axios
-      .post("http://localhost:1000/api/user/signup", userInfo)
+      .post("https://react-shopping-cart-application.onrender.com/api/user/signup", userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {
