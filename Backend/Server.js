@@ -8,11 +8,12 @@ import userRoute from "./Route/user.js";
 const app = express();
 
 dotenv.config();
+app.use(express.json());
 // app.use(cors());
 app.use(cors({
-    origin : ["http://localhost:5173","https://react-shopping-cart-application.vercel.app/"],credentials:true
+    origin : ["http://localhost:5173","https://react-shopping-cart-application-km3t6paeb.vercel.app"],credentials:true
 }));
-app.use(express.json());      // ya middleware very imp h.. jb postman/body se data bhejte h to ya use json ma parse krta h...
+// app.use(express.json());      // ya middleware very imp h.. jb postman/body se data bhejte h to ya use json ma parse krta h...
 
 
 const PORT = process.env.PORT || 2000;
