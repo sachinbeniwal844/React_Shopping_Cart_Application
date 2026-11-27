@@ -14,7 +14,7 @@ dotenv.config();
 //     origin : ["http://localhost:5173","https://react-shopping-cart-application-km3t6paeb.vercel.app"],credentials:true
 // }));
 app.use(cors({
-    origin: "https://react-shopping-cart-application.vercel.app/",
+    origin: ["http://localhost:5173", "https://react-shopping-cart-application.vercel.app"],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
