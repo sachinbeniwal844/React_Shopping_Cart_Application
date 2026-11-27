@@ -43,7 +43,7 @@ const Signup = () => {
         if (err.response) {
           console.log(err);
           // alert("Error: "+ err.response.data.message)
-          toast.error("Error: " + err.response.data.message);
+          toast.error("Error: " + err.response?.data?.message);
         }
       });
   };

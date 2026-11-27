@@ -10,7 +10,7 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    defaultValues: { email: "" },
+    defaultValues: { email : "" },
   });
 
   //  const onSubmit = (data) => console.log(data)
@@ -25,7 +25,7 @@ const Login = () => {
         .then((res) => {
           console.log(res.data);
 
-        if (res.data) {
+        if (res.data?.user) {
           toast.success("Loggedin Successfully");
           document.getElementById("my_modal_3").close();
           setTimeout(() => {
@@ -33,13 +33,12 @@ const Login = () => {
             window.location.reload();
           }, 1000);
         }
-          //  localStorage.setItem("Users",res.data);  // ya object ki form ma h hume name is chaiye to niche likha h
-          // localStorage.setItem("Users", JSON.stringify(res.data.user));  
+            
         })
        .catch((err) => {
         if (err.response) {
           console.log(err);
-          toast.error("Error: " + err.response.data.message);
+          toast.error("Error: " + err.response?.data?.message);
           setTimeout(() => {}, 1000);
         }
       });

@@ -8,13 +8,18 @@ import userRoute from "./Route/user.js";
 const app = express();
 
 dotenv.config();
-app.use(express.json());
-// app.use(cors());
-app.use(cors({
-    origin : ["http://localhost:5173","https://react-shopping-cart-application-km3t6paeb.vercel.app"],credentials:true
-}));
-// app.use(express.json());      // ya middleware very imp h.. jb postman/body se data bhejte h to ya use json ma parse krta h...
 
+// app.use(cors());
+// app.use(cors({
+//     origin : ["http://localhost:5173","https://react-shopping-cart-application-km3t6paeb.vercel.app"],credentials:true
+// }));
+app.use(cors({
+    origin: "https://react-shopping-cart-application.vercel.app/",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
+app.use(express.json());
 
 const PORT = process.env.PORT || 2000;
 const URI = process.env.MongoDBURI;
