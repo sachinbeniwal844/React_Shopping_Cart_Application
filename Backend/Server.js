@@ -33,7 +33,7 @@ try {
 app.use("/api/user", userRoute);
 
 app.get('/', (req, res) => {
-  res.send('<h1>This is the fullStack Project of React Shopping Cart</h1>');
+  res.send('<h1>This is the fullStack Project of React Shopping Cart....    Created by :- Sachin</h1>');
 });
 
 app.listen(PORT, () => {
